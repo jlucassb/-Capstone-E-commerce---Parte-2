@@ -76,6 +76,8 @@ boxShop.appendChild(shopList)
 document.querySelector('.bloco-direita').appendChild(caixaCompra)
 document.querySelector('.bloco-direita').appendChild(boxShop)
 
+
+
 const data = [
     {
         img: './src/imgs/Jacket.png',
@@ -161,11 +163,11 @@ function createCards(arrayCards){
         const addCarrinho = document.createElement('div')
         addCarrinho.classList.add('carrinho')
         addCarrinho.innerText = arrayCards[i].addCarrinho
-        addCarrinho.addEventListener('click', verificarClick) 
-        console.log(verificarClick)
-
+        addCarrinho.addEventListener('click', excluircarrinhovazio)
+        addCarrinho.addEventListener('click', soma) 
+        
         div.appendChild(img)
-
+        
         informacao.appendChild(tag)
         informacao.appendChild(h2)
         informacao.appendChild(p)
@@ -174,8 +176,11 @@ function createCards(arrayCards){
         
         li.appendChild(div)
         li.appendChild(informacao)
-
+        
         cards.appendChild(li)
+        addCarrinho.addEventListener('click', ( )=>{
+            criandoOsItensNoCarrinho(arrayCards[i])
+        })
     }
 }
 createCards(data)
@@ -212,28 +217,14 @@ function encontrarItem(){
     createCards(newData)
 }
 
-function verificarClick(event){
-    return criandoOsItensNoCarrinho(data[i])
+function excluircarrinhovazio(){
+    const excluir = document.querySelector('.itens-carrinho')
+    excluir.innerHTML = ''
 }
 
-/*function verificarClick(event){
-    const button = document.querySelectorAll('.carrinho')
-    const item = event.target
-    const newData = []
-
-    for(let i = 0; i < data.length; i++){
-        if(data[i].addCarrinho.indexOf(button) !== -1){
-            newData.push(data[i])
-        }
-    }
-    criandoOsItensNoCarrinho(newData)
-}
-*/
-function criandoOsItensNoCarrinho(array){
+function criandoOsItensNoCarrinho(produto){
     const divBox = document.querySelector('.itens-carrinho')
-    divBox.innerHTML = ''
-    
-    for(let i = 0; i < array.length; i++){
+   
         const ul = document.createElement('ul')
         
         const li = document.createElement('li')
@@ -243,21 +234,22 @@ function criandoOsItensNoCarrinho(array){
         divImg.classList.add('item-foto')
         
         const img = document.createElement('img')
-        img.src = array[i].img
+        img.src = produto.img
         
         const divInfo = document.createElement('div')
         divInfo.classList.add('info-item')
         
         const h3 = document.createElement('h3')
-        h3.innerText = array[i].titulo
+        h3.innerText = produto.titulo
         
         const divPreco = document.createElement('div')
         divPreco.classList.add('item-preco')
-        divPreco.innerText = array[i].preco
+        divPreco.innerText = produto.preco
         
         const divRemove = document.createElement('div')
         divRemove.classList.add('remove')
         divRemove.innerText = 'Remover Produto'
+        divRemove.addEventListener('click', removeProduto)
         
         divImg.appendChild(img)
         
@@ -271,14 +263,18 @@ function criandoOsItensNoCarrinho(array){
         ul.appendChild(li)
         
         divBox.appendChild(ul)
-    }
 }
 
+function removeProduto(){
+    const remover = document.querySelector('.remove')
+    remover.parentNode.parentNode.parentNode.style.display='none'
+}
 
 function soma(){
     const sumBox = document.querySelector('.bloco-direita')
     const box = document.createElement('div')
     box.setAttribute('id', 'box')
+    box.classList.add('hidden')
     const P = document.createElement('p')
     P.classList.add('Quantidade')
     const p2 = document.createElement('p')
@@ -289,7 +285,9 @@ function soma(){
     box.appendChild(P)
     box.appendChild(p2)
     sumBox.appendChild(box)
+    
 }
+
 
 const botaoPesquisar = document.getElementById('btnFind')
 botaoPesquisar.addEventListener('click', encontrarItem)

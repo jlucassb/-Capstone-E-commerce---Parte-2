@@ -244,6 +244,9 @@ main {
     display: grid;
     align-content: space-between;
 }
+.box {
+    visibility: hidden;
+}
 .Quantidade {
     color: #FFFFFF;
     font-weight: 500;
