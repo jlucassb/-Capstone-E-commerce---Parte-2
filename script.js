@@ -80,7 +80,7 @@ document.querySelector('.bloco-direita').appendChild(boxShop)
 
 const data = [
     {
-        img: './src/imgs/Jacket.png',
+        img: './imgs/Jacket.png',
         tag: 'Camisetas',
         titulo: 'Jaqueta preta',
         descricao: 'Adicione um pouco de energia ao seu guarda-roupa de inverno com esta jaqueta vibrante...',
@@ -88,7 +88,7 @@ const data = [
         addCarrinho: 'Adicionar ao carrinho',
     },
     {
-        img: './src/imgs/blackhat.png',
+        img: './imgs/blackhat.png',
         tag: 'Acessórios',
         titulo: 'Toca preta',
         descricao: 'O gorro Next.js chegou! Esta beldade bordada tem um ajuste confortável que garante que...',
@@ -96,7 +96,7 @@ const data = [
         addCarrinho: 'Adicionar ao carrinho',
     },
     {
-        img: './src/imgs/Mask.png',
+        img: './imgs/Mask.png',
         tag: 'Acessórios',
         titulo: 'Máscara',
         descricao: 'Esta máscara facial durável é feita de duas camadas de tecido tratado e possui presilhas...',
@@ -104,7 +104,7 @@ const data = [
         addCarrinho: 'Adicionar ao carrinho',
     },
     {
-        img: './src/imgs/TShirt-Black.png',
+        img: './imgs/TShirt-Black.png',
         tag: 'Camisetas',
         titulo: 'Camiseta preta',
         descricao: 'Esta t-shirt é imprescindível no seu guarda-roupa, combinando o caimento intemporal de...',
@@ -112,7 +112,7 @@ const data = [
         addCarrinho: 'Adicionar ao carrinho',
     },
     {
-        img: './src/imgs/TShirt-White.png',
+        img: './imgs/TShirt-White.png',
         tag: 'Camisetas',
         titulo: 'Camiseta branca',
         descricao: 'Agora você encontrou a camiseta básica do seu guarda-roupa. É feito de um mais grosso...',
@@ -120,7 +120,7 @@ const data = [
         addCarrinho: 'Adicionar ao carrinho',
     },
     {
-        img: './src/imgs/mockup.png',
+        img: './imgs/mockup.png',
         tag: 'Camisetas',
         titulo: 'Jaqueta embalável',
         descricao: 'Proteja-se dos elementos com esta jaqueta embalável Champion. Esta jaqueta de poliést...',
